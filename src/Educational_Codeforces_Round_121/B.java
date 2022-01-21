@@ -12,7 +12,7 @@ public class B {
                 String num = Integer.toString(n);
                 if (num.length() == 1) {
                     System.out.println(num);
-                } else {
+               } else {
                     String naya = "";
                     int max = 0;
                     for (int i = 0; i < num.length() - 1; i++) {
