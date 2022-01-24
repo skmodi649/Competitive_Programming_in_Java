@@ -15,8 +15,7 @@ public class B_Ordinary_numbers {
                     int L = 1;
                     int tmp = 0, ans = 0 , R = num;
 
-                    // Length of R
-                    int n = (int)Math.log10(R) + 1;
+                   int n = String.valueOf(num).length();
 
                     for(int i = 0; i < n; i++)
                     {
