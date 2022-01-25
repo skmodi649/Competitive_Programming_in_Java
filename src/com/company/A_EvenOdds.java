@@ -1,3 +1,12 @@
+/*
+Own devised efficient solution
+Concept : Using the concept of arithmetic progression , for nth odd term formula will be : T(n) = 1 + (n - 1)*2;
+                                                        for nth even term formula will be : T(n) = 2 + (n - 1)*2;
+ */
+
+
+
+
 package com.company;
 
 import java.util.Scanner;
