@@ -7,26 +7,28 @@ public class A_EvenOdds {
         Scanner sc = new Scanner(System.in);
         long n = sc.nextLong();
         long k = sc.nextLong();
-        boolean res = false;
-        long i, j;
-        for (i = 1; i <= n; i = i + 2) {
-            if (k == 1) {
-                res = true;
-                break;
-            } else {
-                k--;
+        if(n % 2 == 0){
+            if(k <= n / 2){
+                long val = 1 + (k - 1) * 2;
+                System.out.println(val);
+            }
+            else{
+                long naya = k - n/2;
+                long val = 2 + (naya - 1) * 2;
+                System.out.println(val);
             }
         }
-        if (res) {
-            System.out.println(i);
-        } else {
-            for (j = 2; j <= n; j = j + 2) {
-                if (k == 1) {
-                    System.out.println(j);
-                    break;
-                } else {
-                    k--;
-                }
+        else{
+            long div = n / 2;
+            div = div + 1;
+            if(k <= div){
+                long val = 1 + (k - 1) * 2;
+                System.out.println(val);
+            }
+            else{
+                long naya = k - div;
+                long val = 2 + (naya - 1) * 2;
+                System.out.println(val);
             }
         }
     }
