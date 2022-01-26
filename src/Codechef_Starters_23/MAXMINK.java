@@ -10,6 +10,7 @@ public class MAXMINK {
             for (int a = 1; a <= t; a++) {
                 int N = sc.nextInt();
                 int K = sc.nextInt();
+                int X = sc.nextInt();
                 int[] A = new int[N];
                 int[] B = new int[N];
                 for(int i = 0 ; i < N ; i++)
