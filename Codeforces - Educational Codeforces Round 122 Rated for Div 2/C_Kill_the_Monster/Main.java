@@ -1,8 +1,10 @@
-package Educational_Codeforces_Round_122;
+//  C. Kill the Monster
 
-import java.util.Scanner;
+import java.util.*;
+import java.lang.*;
+import java.io.*;
 
-public class Kill_the_Monster {
+class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
@@ -28,9 +30,9 @@ public class Kill_the_Monster {
                 }
             }
             if(character_health <= 0)
-                System.out.println("No");
+                System.out.println("NO");
             else
-                System.out.println("Yes");
+                System.out.println("YES");
         }
     }
 }
