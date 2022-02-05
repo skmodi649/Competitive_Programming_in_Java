@@ -3,40 +3,53 @@
 import java.util.*;
 import java.lang.*;
 class Main {
+    public static boolean identical(List<Integer> list){
+        for(int i = 0 ; i < list.size() - 1 ; i++){
+            if(list.get(i) != list.get(i + 1))
+                return false;
+        }
+        return true;
+    }
     public static void main(String[] args) {
         try {
             Scanner sc = new Scanner(System.in);
             int t = sc.nextInt();
             for (int a = 1; a <= t; a++) {
                 int n = sc.nextInt();
+                int max = Integer.MIN_VALUE;
                 int[] arr = new int[n];
-                for (int i = 0; i < n; i++)
+                List<Integer> list = new ArrayList<>();
+                for (int i = 0; i < n; i++) {
                     arr[i] = sc.nextInt();
+                }
+                for(int i = 0 ; i < n ; i++)
+                    list.add(arr[i]);
 
                 // Checking if all elements are identical in the array
-                int sumOfArray = 0, count = 0;
-                for (int i = 0; i < n - 1; i++) {
-                    if (arr[i] == arr[i + 1])
-                        count++;
-                }
-                if (count == n - 1) {
+                if (identical(list)) {
                     System.out.println("0");
                 } else if (n == 2) {
                     System.out.println("1");
                 } else {
-                    for(int x = 0 ; x < n ; x++)
-                        sumOfArray+=arr[x];
-                    int max = arr[0];
-                    for (int i = 0; i < n; i++) {
-                        if (arr[i] > max)
+                    for(int i = 0 ; i < n ; i++){
+                        if(arr[i] > max)
                             max = arr[i];
                     }
-                    double val = sumOfArray / max;
-                    double floorval = Math.floor(val);
-                    if((val-floorval) == 0.0)
-                        System.out.println((int)(val-1));
-                    else
-                        System.out.println("0");
+                    int s = 0 , operation = 0;
+                    while(s < list.size()){
+                        if(list.get(s)+ list.get(s+1) == max){
+                            list.add(s,max);
+                            list.remove(s+1);
+                            operation++;
+                        }
+                        if(list.get(s)+list.get(s+1) > max){
+                            list.add(s, list.get(s)+list.get(s+1));
+                            list.remove(s+1);
+                            operation++;
+                        }
+                        s++;
+                    }
+                    System.out.println(operation);
                 }
             }
         }
