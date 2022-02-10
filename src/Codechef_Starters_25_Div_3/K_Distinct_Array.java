@@ -2,7 +2,7 @@ package Codechef_Starters_25_Div_3;
 
 import java.util.Scanner;
 
-public class asdf {
+public class K_Distinct_Array {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
